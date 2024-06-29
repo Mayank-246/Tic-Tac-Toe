@@ -190,36 +190,47 @@ button.active{
         height: auto;
     }
 }
-@media (max-width:690px){
-    .game{
+@media (max-width: 690px) {
+    .game {
         display: flex;
         flex-direction: column-reverse;
+        height: 800px;
+        margin: 0;
     }
-    .controls{
+    .controls {
         display: flex;
         flex-direction: row;
     }
-    .subsection button{
+    .subsection button {
         width: auto;
-        
     }
-    .gameboard{
-        grid-template-columns: repeat(3,120px);
-        grid-template-rows: repeat(3,120px);
+    .right {
+        height: 40vh;
     }
-    .right{
+    .left {
+        height: 40vh;
+        padding: 0;
+        margin-top: 0;
+    }
+    .gameboard {
+        grid-template-columns: repeat(3, 120px);
+        grid-template-rows: repeat(3, 120px);
+    }
+    .right {
         justify-content: center;
         align-items: center;
         padding-bottom: 10px;
     }
-    .left{
-        height: 350px;
+    .left {
+        height: 200px;
     }
-    nav h1{
+    nav h1 {
         font-size: 15vw;
     }
-    .subsection{
+    .subsection {
         margin-bottom: 5px;
     }
-    
+    #winner_text {
+        margin: 0;
+    }
 }
