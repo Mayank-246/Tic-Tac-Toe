@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #efe2ba;
+}
+nav{
+    background-color: #4056a1;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+nav h1{
+    color: #d79922;
+    font-size: 9vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.game{
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    height: 90vh;
+    
+}
+.gameboard{
+    display: grid;
+    grid-template-columns: repeat(3, 180px);
+    grid-template-rows: repeat(3, 180px);
+}
+.box{
+    border: 2px solid black;
+}
+.nl{
+    border-left: none;
+}
+.nt{
+    border-top: none;
+}
+.nr{
+    border-right: none;
+}
+.nb{
+    border-bottom: none;
+}
+
+
+.box{
+    font-size: 8vw;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box:hover {
+    background-color: #dccea3;
+}
+
+.box.active {
+    background-color: #dbcea6;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    padding: 20px;
+    gap: 30px;
+}
+.subsection{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.subsection h2{
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: rgb(18, 11, 11);
+}
+button{
+    background-color: #4056a1;
+    color: aliceblue;
+    border: none;
+    padding: 10px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 5PX;
+}
+button:hover{
+    background-color: #142763;
+}
+button:focus{
+    outline: none;
+}
+button.active{
+    background-color: #142763;
+    outline: 2px solid black;
+    border: none;
+}
+.depth_set input[type="number"] {
+    padding: 10px;
+    font-size: 1em;
+    margin: 10px 0;
+    border: 1px solid #9d9393;
+    width: calc(100% - 22px);
+}
+
+.depth_set button {
+    margin-top: 10px;
+}
+
+.depth_set p {
+    font-size: 15px;
+    color: #666;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.depth_set p span{
+    font-weight: bold;
+}
+
+.controls{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.controls button{
+    width: 0.6fr;
+}
+.turn{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    
+}
+#winner_text{
+    
+    font-size: 2.2em;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px;
+    
+}
+
+@media (max-width:1000px){
+    .gameboard{
+        grid-template-columns: repeat(3,140px);
+        grid-template-rows: repeat(3,140px);
+    }
+    
+    .subsection h2{
+        font-size: 25px;
+    }
+}
+@media (max-width:850px)
+{
+    .game{
+        grid-template-columns: 1fr 3fr;
+    }
+    .subsection h2{
+        font-size: 22px;
+    }
+   .subsection button{
+    width: 180px;
+    height: 30px;
+   }
+   .subsection button{
+    height: auto;
+   }
+    .controls{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    button{
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        
+    }
+    .subsection button{
+        height: auto;
+    }
+}
+@media (max-width:690px){
+    .game{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .controls{
+        display: flex;
+        flex-direction: row;
+    }
+    .subsection button{
+        width: auto;
+        
+    }
+    .gameboard{
+        grid-template-columns: repeat(3,120px);
+        grid-template-rows: repeat(3,120px);
+    }
+    .right{
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+    .left{
+        height: 350px;
+    }
+    nav h1{
+        font-size: 15vw;
+    }
+    .subsection{
+        margin-bottom: 5px;
+    }
+    
+}

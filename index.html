@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <h1>Tic Tac Toe</h1>
+    </nav>
+    <div class="game">
+        <div class="left">
+            <form id="gamedata">
+                <div class="leftbox">
+                    <div class="subsection game-type">
+                        <h2>Choose Game Mode</h2>
+                        <div class="buttons game-type-buttons" >
+                            <button type="button" id="single" class="game-btn" data-value="single">Single Player (vs System)</button>
+                            <button type="button" id="multi" class="game-btn" data-value="multi">Multiplayer</button>
+                        </div>
+                    </div>
+                    <div class="subsection algo-type">
+                        <h2>Choose Algorithm</h2>
+                        <div class="buttons algo-type-buttons">
+                            <button type="button" id="minimax" class="algo-btn" data-value="minimax">Minimax</button>
+                            <button type="button" id="alpha-beta" class="algo-btn" data-value="alpha_beta">Alpha-Beta Pruning</button>
+                        </div>   
+                    </div>
+                    <div class="subsection depth_set">
+                        <h2>Set Depth</h2>
+                        <input type="number" name="depth" id="depth" placeholder="depth">
+                        <p><span class="note">Note:</span> Default max depth is set to be infinite.</p>
+                    </div>
+                    <div class="controls">
+                        <button type="submit" id="start">Start Game</button>
+                        <button type="button" id="restart">Restart</button>
+                        <button type="button" id="reset">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="right">
+            <div class="winner turn"><p id="winner_text">Turn for X</p></div>
+            <div class="gameboard">
+                
+                    <div class="box nl nt" id="0"></div>
+                    <div class="box nt" id="1"></div>
+                    <div class="box nt nr" id="2"></div>
+                
+                    <div class="box nl" id="3"></div>
+                    <div class="box" id="4"></div>
+                    <div class="box nr" id="5"></div>
+                
+                    <div class="box nl nb" id="6"></div>
+                    <div class="box nb" id="7"></div>
+                    <div class="box nb nr" id="8"></div>
+                
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+</html>
