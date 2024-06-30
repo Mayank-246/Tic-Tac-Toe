@@ -33,14 +33,14 @@ document.addEventListener('DOMContentLoaded', function () {
     $('#gamedata').submit(function (event) {
         event.preventDefault();
         if (!gameInProgress) {
-            const depthInputValue =$('#depth').value;
+            const depthInputValue =$('#depth').val();
             depth = !depthInputValue || isNaN(depthInputValue) ? Infinity : parseInt(depthInputValue);
 
             gameInProgress = true;
             document.querySelectorAll('.buttons button').forEach(element => {
                 element.disabled = true;
             });
-            $('depth').disabled = true;
+            $('depth').prop('disabled', true);
 
             startGame(selectedGameType, selectedAlgorithm, depth);
         }
@@ -50,14 +50,14 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedGameType = null;
         selectedAlgorithm = null;
         gameInProgress = false;
-        $('#depth').value = '';
+        $('#depth').val('');
         $('#winner_text').text('Turn for X');
         document.querySelectorAll('.buttons button').forEach(button => {
             button.classList.remove('active');
             button.disabled = false;
         });
 
-        $('#depth').disabled = false;
+        $('#depth').prop('disabled', false);
         resetBoard();
         endGame();
     });
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.buttons button').forEach(element => {
             element.disabled = false;
         });
-        $('#depth').disabled = false;
+        $('#depth').prop('disabled', false);
 
         cells.forEach(cell => {
             cell.removeEventListener('click', handleCellClick);
